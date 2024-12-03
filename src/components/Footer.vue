@@ -13,13 +13,10 @@
 .footer {
   background-color: #222;
   color: #fff;
-  padding: 30px 20px;
+  padding: 20px;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  z-index: 10;
 }
 
 /* Footer text styles */
@@ -29,26 +26,21 @@
   letter-spacing: 1px;
   margin: 0;
   opacity: 0.8;
-  transition: opacity 0.3s ease;
 }
 
-/* Hover effect on footer text */
 .footer-text:hover {
   opacity: 1;
 }
 
-/* Author section styling */
 .author {
   font-size: 1rem;
   margin-top: 10px;
   opacity: 0.7;
 }
 
-/* Link styling */
 .author a {
   color: #FF6F61;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .author a:hover {

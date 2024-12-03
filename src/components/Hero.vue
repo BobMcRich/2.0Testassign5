@@ -2,106 +2,114 @@
 </script>
 
 <template>
-  <div class="movies-section">
-    <h2 class="title">Top Rated Movies</h2>
-    <div class="movies">
-      <!-- Movie Cards will be added here -->
-      <div class="movie-card">
-        <img src="https://via.placeholder.com/200x300" alt="Movie Title" class="movie-image" />
-        <div class="movie-info">
-          <h3>Movie Title</h3>
-          <p>⭐ 9.8/10</p>
-        </div>
-      </div>
-      <!-- Repeat similar cards for more movies -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1 class="website-name">SuperFilms</h1>
+      <p class="slogan">Where Every Film Finds Its Hero</p>
+    </div>
+  </div>
+  <div v-if="response" class="movie-grid">
+    <div v-for="number in numbers" :key="response.data.results[number].id" class="movie-card">
+      <img :src="`https://image.tmdb.org/t/p/w500${response.data.results[number].poster_path}`" alt="Movie Poster" class="movie-poster" />
+      <p class="movie-title">{{ response.data.results[number].title }}</p>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Container for the entire movie section */
-.movies-section {
-  padding: 40px 20px;
-  background-color: #f5f5f5;
+.hero {
+  background: linear-gradient(135deg, #FF6F61, #D83A6A);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Set the height of the hero section */
   text-align: center;
+  position: relative;
+  color: white;
+  padding: 40px 20px;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2); /* Adding subtle shadow for depth */
 }
 
-/* Title for the top-rated movies section */
-.title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
+.hero-content {
+  z-index: 2;
+  padding: 20px;
+  backdrop-filter: blur(8px); /* Slight blur effect */
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.4); /* Adding transparency to the background */
+}
+
+.website-name {
+  font-size: 3rem;
+  font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
+  animation: fadeIn 2s ease-out;
 }
 
-/* Flexbox container for the movie cards */
-.movies {
+.slogan {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 10px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  animation: fadeIn 3s ease-out;
+}
+
+.movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
-/* Style for each individual movie card */
 .movie-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 220px;
-  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
 
 .movie-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the movie poster image */
-.movie-image {
+.movie-poster {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-bottom: 2px solid #eee;
+  height: auto;
+  border-radius: 15px;
 }
 
-/* Movie information (title and rating) */
-.movie-info {
-  padding: 15px;
-  text-align: left;
-}
-
-.movie-info h3 {
+.movie-title {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: #fff;
   font-size: 1.2rem;
-  color: #333;
-  font-weight: 500;
-  margin-bottom: 5px;
-  text-transform: capitalize;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  border-radius: 0 0 15px 15px;
 }
 
-.movie-info p {
-  font-size: 1rem;
-  color: #FF6F61;
-  font-weight: 600;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .movies {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .movie-card {
-    max-width: 180px;
-  }
-
-  .title {
-    font-size: 2rem;
+  to {
+    opacity: 1;
   }
 }
 </style>
