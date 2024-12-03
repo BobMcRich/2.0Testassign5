@@ -25,7 +25,7 @@ const handleLogin = () => {
         <h2>Login to Your Account</h2>
         <form @submit.prevent="handleLogin">
           <input type="email" placeholder="Email" class="input-field" required />
-          <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
+          <input v-model="password" type="password" placeholder="Password" class="input-field" required />
           <button type="submit" class="button login">Login</button>
         </form>
       </div>
@@ -34,110 +34,113 @@ const handleLogin = () => {
 </template>
 
 <style scoped>
+/* Full-screen hero section */
 .hero {
-  background-image: url('https://source.unsplash.com/random/1920x1080/?movie');
-  /* Replace with your desired background */
-  background-size: cover;
+  background: linear-gradient(135deg, #FF6F61, #D83A6A); /* Gradient background */
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
   position: relative;
 }
 
+/* Overlay to dim the background */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
+  align-items: center;
   padding: 20px;
-  /* Added padding for better spacing */
+  border-radius: 10px;
 }
 
+/* Navbar style */
 .navbar {
+  position: absolute;
+  top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .navbar h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-.navbar .register {
-  background-color: #e50914;
-  color: white;
+.button {
+  background-color: #fff;
+  color: #D83A6A;
   padding: 10px 20px;
-  text-decoration: none;
+  font-size: 1rem;
+  border: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.navbar .register:hover {
-  background-color: #f40612;
+.button:hover {
+  background-color: #FF6F61;
+  color: white;
 }
 
+/* Register button specific styling */
+.register {
+  font-size: 1.1rem;
+}
+
+/* Form container styles */
 .form-container {
-  text-align: center;
-  margin-top: 50px;
-  /* Adjusts spacing from the top */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h2 {
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 20px;
+  color: #333;
 }
 
+/* Input field styles */
 .input-field {
-  padding: 15px;
-  /* Increased padding for better touch targets */
-  width: 300px;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  /* Added a border */
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #e50914;
-  /* Change border color on focus */
-  outline: none;
-  /* Remove default outline */
+  border-color: #FF6F61;
 }
 
+/* Submit button */
 .login {
-  background-color: #e50914;
+  width: 100%;
+  padding: 12px;
+  background-color: #FF6F61;
   color: white;
-  padding: 10px 20px;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  /* Added transform for hover effect */
+  transition: background-color 0.3s ease;
 }
 
 .login:hover {
-  background-color: #f40612;
-  transform: scale(1.05);
-  /* Slightly scale up on hover */
-}
-
-@media (max-width: 600px) {
-  .input-field {
-    width: 90%;
-    /* Make input fields responsive */
-  }
-
-  .navbar h1 {
-    font-size: 1.5rem;
-    /* Reduce font size on smaller screens */
-  }
+  background-color: #D83A6A;
 }
 </style>
