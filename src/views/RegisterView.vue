@@ -1,11 +1,12 @@
 <script setup>
+import Footer from '../components/Footer.vue';
 </script>
 
 <template>
   <div class="hero">
     <div class="overlay">
       <div class="navbar">
-        <h1>HeroFilms</h1>
+        <h1>SuperFilms</h1>
         <a href="index.html" class="button login">Login</a>
       </div>
       <div class="form-container">
@@ -19,6 +20,7 @@
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped>

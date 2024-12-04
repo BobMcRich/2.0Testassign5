@@ -18,45 +18,47 @@
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, #FF6F61, #D83A6A);
+  background: linear-gradient(135deg, #FF6F61, #D83A6A); /* Gradient background to make it vibrant */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh; /* Set the height of the hero section */
+  height: 30vh; /* Smaller height for the hero section */
   text-align: center;
   position: relative;
   color: white;
-  padding: 40px 20px;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2); /* Adding subtle shadow for depth */
+  padding: 40px; /* Padding to give space around the content */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adding a large shadow for a floating effect */
+  margin-bottom: 40px; /* Space between hero section and content below */
 }
 
 .hero-content {
   z-index: 2;
   padding: 20px;
-  backdrop-filter: blur(8px); /* Slight blur effect */
+  backdrop-filter: blur(10px); /* A stronger blur effect for emphasis */
   border-radius: 12px;
   width: 90%;
-  max-width: 600px;
-  background: rgba(0, 0, 0, 0.4); /* Adding transparency to the background */
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.5); /* Transparent background with more opacity */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for content */
 }
 
 .website-name {
-  font-size: 3rem;
+  font-size: 3rem; /* Large font size to draw attention */
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
-  animation: fadeIn 2s ease-out;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .slogan {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Slightly larger slogan */
   font-weight: 300;
   margin-top: 10px;
-  opacity: 0.8;
-  letter-spacing: 0.5px;
-  animation: fadeIn 3s ease-out;
+  opacity: 0.9;
+  letter-spacing: 1px;
+  animation: fadeIn 2s ease-out;
 }
 
 .movie-grid {

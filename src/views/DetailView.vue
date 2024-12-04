@@ -1,6 +1,8 @@
 <script setup>
 import axios from "axios";
 import { useRoute } from "vue-router";
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 
 const route = useRoute();
 const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
@@ -8,22 +10,37 @@ console.log(response.data);
 </script>
 
 <template>
+  <Header />
   <div class="movie-detail">
-    <h1 class="movie-title">{{ response.data.original_title }}</h1>
-    <p class="movie-overview">{{ response.data.overview }}</p>
-    <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
-    <a class="movie-site" :href="response.data.homepage" target="_blank">Official Movie Site</a>
-    <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster" class="movie-poster" />
+    <!-- Movie Title and Poster Section -->
+    <div class="movie-header">
+      <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster" class="movie-poster" />
+      <div class="movie-info">
+        <h1 class="movie-title">{{ response.data.original_title }}</h1>
+        <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
+        <a class="movie-site" :href="response.data.homepage" target="_blank">Official Movie Site</a>
+      </div>
+    </div>
 
-    <h2 class="trailers-title">Trailers</h2>
-    <div class="trailers-container">
-      <div v-for="trailer in response.data.videos.results" :key="trailer.id" class="trailer-tile">
-        <a :href="`https://www.youtube.com/watch?v=${trailer.key}`" target="_blank">
-          <img :src="`https://img.youtube.com/vi/${trailer.key}/hqdefault.jpg`" alt="Trailer" class="trailer-thumbnail" />
-        </a>
+    <!-- Movie Overview Section -->
+    <div class="movie-overview-section">
+      <h2>Overview</h2>
+      <p class="movie-overview">{{ response.data.overview }}</p>
+    </div>
+
+    <!-- Trailers Section -->
+    <div class="trailers-section">
+      <h2 class="trailers-title">Trailers</h2>
+      <div class="trailers-container">
+        <div v-for="trailer in response.data.videos.results" :key="trailer.id" class="trailer-tile">
+          <a :href="`https://www.youtube.com/watch?v=${trailer.key}`" target="_blank">
+            <img :src="`https://img.youtube.com/vi/${trailer.key}/hqdefault.jpg`" alt="Trailer" class="trailer-thumbnail" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped>
@@ -31,38 +48,43 @@ console.log(response.data);
 .movie-detail {
   background-color: #f9f9f9;
   padding: 30px 20px;
-  text-align: center;
   font-family: 'Arial', sans-serif;
 }
 
-/* Movie title styling */
+/* Movie header with poster and information */
+.movie-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.movie-poster {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info {
+  flex: 1;
+  text-align: left;
+}
+
 .movie-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-}
-
-/* Movie overview styling */
-.movie-overview {
-  font-size: 1.2rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  text-align: justify;
-}
-
-/* Movie release date styling */
-.movie-release-date {
-  font-size: 1.1rem;
-  color: #777;
   margin-bottom: 15px;
-  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 1px;
 }
 
-/* Official movie site link styling */
+.movie-release-date {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
 .movie-site {
   display: inline-block;
   background-color: #FF6F61;
@@ -70,7 +92,6 @@ console.log(response.data);
   padding: 12px 20px;
   text-decoration: none;
   border-radius: 5px;
-  margin-bottom: 30px;
   transition: background-color 0.3s ease;
 }
 
@@ -78,38 +99,48 @@ console.log(response.data);
   background-color: #D83A6A;
 }
 
-/* Movie poster styling */
-.movie-poster {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+/* Movie overview section */
+.movie-overview-section {
+  background-color: #fff;
+  padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
 }
 
-.movie-poster:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.movie-overview-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-/* Trailers title styling */
+.movie-overview {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Trailers section */
+.trailers-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .trailers-title {
   font-size: 2rem;
   font-weight: 600;
   color: #333;
-  margin-top: 50px;
   margin-bottom: 20px;
 }
 
-/* Container for the trailer thumbnails */
 .trailers-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   justify-items: center;
-  margin-top: 30px;
 }
 
 /* Individual trailer thumbnail styling */
@@ -141,6 +172,11 @@ console.log(response.data);
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  .movie-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .movie-title {
     font-size: 2rem;
   }
@@ -150,7 +186,7 @@ console.log(response.data);
   }
 
   .movie-poster {
-    max-width: 250px;
+    width: 250px;
   }
 
   .trailers-title {
@@ -158,3 +194,4 @@ console.log(response.data);
   }
 }
 </style>
+

@@ -3,7 +3,7 @@
 
 <template>
   <div class="footer">
-    <p class="footer-text">HeroFilms, 2024</p>
+    <p class="footer-text">SuperFilms, 2024</p>
     <p class="author">Author: <a href="mailto:Samuel.li2@student.tdsb.on.ca">Samuel.li2@student.tdsb.on.ca</a></p>
   </div>
 </template>

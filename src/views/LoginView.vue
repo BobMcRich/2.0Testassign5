@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, useRouter } from 'vue-router';
 import { ref } from 'vue';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
 const router = useRouter();
 const password = ref('');
@@ -18,7 +20,7 @@ const handleLogin = () => {
   <div class="hero">
     <div class="overlay">
       <div class="navbar">
-        <h1>HeroFilms</h1>
+        <h1>SuperFilms</h1>
         <RouterLink to="/register" class="button register">Register</RouterLink>
       </div>
       <div class="form-container">
@@ -31,6 +33,7 @@ const handleLogin = () => {
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped>
