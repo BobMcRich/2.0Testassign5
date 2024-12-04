@@ -18,32 +18,32 @@
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, #FF6F61, #D83A6A); /* Gradient background to make it vibrant */
+  background: linear-gradient(135deg, #FF6F61, #D83A6A); 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh; /* Smaller height for the hero section */
+  height: 30vh; 
   text-align: center;
   position: relative;
   color: white;
-  padding: 40px; /* Padding to give space around the content */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adding a large shadow for a floating effect */
-  margin-bottom: 40px; /* Space between hero section and content below */
+  padding: 40px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+  margin-bottom: 40px; 
 }
 
 .hero-content {
   z-index: 2;
   padding: 20px;
-  backdrop-filter: blur(10px); /* A stronger blur effect for emphasis */
+  backdrop-filter: blur(10px); 
   border-radius: 12px;
   width: 90%;
   max-width: 500px;
-  background: rgba(0, 0, 0, 0.5); /* Transparent background with more opacity */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for content */
+  background: rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
 }
 
 .website-name {
-  font-size: 3rem; /* Large font size to draw attention */
+  font-size: 3rem; 
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -53,7 +53,7 @@
 }
 
 .slogan {
-  font-size: 1.5rem; /* Slightly larger slogan */
+  font-size: 1.5rem; 
   font-weight: 300;
   margin-top: 10px;
   opacity: 0.9;

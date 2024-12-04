@@ -15,14 +15,14 @@ import Footer from '../components/Footer.vue';
 </template>
 
 <style scoped>
-/* Layout for the page container to make footer stick at the bottom */
+
 .page-container {
-  min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
 }
 
 footer {
-  margin-top: auto; /* Push footer to the bottom if content is short */
+  margin-top: auto; 
 }
 </style>

@@ -1,5 +1,6 @@
 <script setup>
 import Footer from '../components/Footer.vue';
+import { RouterLink } from 'vue-router'; 
 </script>
 
 <template>
@@ -7,7 +8,8 @@ import Footer from '../components/Footer.vue';
     <div class="overlay">
       <div class="navbar">
         <h1>SuperFilms</h1>
-        <a href="index.html" class="button login">Login</a>
+        
+        <RouterLink to="/login" class="button login">Login</RouterLink>
       </div>
       <div class="form-container">
         <h2>Create an Account</h2>
@@ -15,6 +17,7 @@ import Footer from '../components/Footer.vue';
           <input type="text" placeholder="Name" class="input-field" required />
           <input type="email" placeholder="Email" class="input-field" required />
           <input type="password" placeholder="Password" class="input-field" required />
+          <input type="password" placeholder="Re-enter password" class="input-field" required />
           <button type="submit" class="button register">Register</button>
         </form>
       </div>
@@ -24,22 +27,20 @@ import Footer from '../components/Footer.vue';
 </template>
 
 <style scoped>
-/* Hero section with a gradient background */
 .hero {
-  background: linear-gradient(135deg, #FF6F61, #D83A6A); /* Gradient background */
+  background: linear-gradient(135deg, #FF6F61, #D83A6A);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   text-align: center;
   position: relative;
   color: white;
   overflow: hidden;
 }
 
-/* Overlay to darken the background */
 .overlay {
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   display: flex;
@@ -50,7 +51,6 @@ import Footer from '../components/Footer.vue';
   border-radius: 10px;
 }
 
-/* Navbar at the top */
 .navbar {
   position: absolute;
   top: 20px;
@@ -65,7 +65,6 @@ import Footer from '../components/Footer.vue';
   font-weight: bold;
 }
 
-/* Button styles */
 .button {
   background-color: #fff;
   color: #D83A6A;
@@ -83,12 +82,10 @@ import Footer from '../components/Footer.vue';
   color: white;
 }
 
-/* Login button specific styling */
 .login {
   font-size: 1.1rem;
 }
 
-/* Form container with input fields */
 .form-container {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 30px 40px;
@@ -98,7 +95,6 @@ import Footer from '../components/Footer.vue';
   max-width: 400px;
 }
 
-/* Form heading */
 .form-container h2 {
   font-size: 2rem;
   font-weight: 600;
@@ -106,7 +102,6 @@ import Footer from '../components/Footer.vue';
   color: #333;
 }
 
-/* Input fields */
 .input-field {
   width: 100%;
   padding: 12px;
@@ -122,7 +117,6 @@ import Footer from '../components/Footer.vue';
   border-color: #FF6F61;
 }
 
-/* Register button */
 .register {
   width: 100%;
   padding: 12px;

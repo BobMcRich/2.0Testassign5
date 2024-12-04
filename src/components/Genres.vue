@@ -45,7 +45,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Movie Gallery container */
 .movie-gallery {
   background-color: #f4f4f4;
   padding: 20px;
@@ -53,7 +52,6 @@ onMounted(() => {
   text-align: center;
 }
 
-/* Genre selector dropdown */
 .genre-selector {
   padding: 10px 15px;
   margin-bottom: 30px;
@@ -65,10 +63,9 @@ onMounted(() => {
 }
 
 .genre-selector:focus {
-  border-color: #FF6F61; /* Highlight border on focus */
+  border-color: #FF6F61; 
 }
 
-/* Movie list container */
 .movie-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -76,7 +73,6 @@ onMounted(() => {
   justify-items: center;
 }
 
-/* Individual movie card styling */
 .movie-card {
   background-color: white;
   border-radius: 10px;
@@ -94,7 +90,6 @@ onMounted(() => {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Movie poster styling */
 .movie-poster {
   width: 100%;
   height: auto;
@@ -103,10 +98,9 @@ onMounted(() => {
 }
 
 .movie-card:hover .movie-poster {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05);
 }
 
-/* Movie title styling */
 .movie-title {
   margin-top: 10px;
   font-size: 1.1rem;
@@ -119,7 +113,6 @@ onMounted(() => {
   overflow: hidden;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .genre-selector {
     width: 100%;
@@ -130,11 +123,7 @@ onMounted(() => {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
-</style>
 
-
-<style scoped>
-/* Movie Gallery container */
 .movie-gallery {
   background-color: #f4f4f4;
   padding: 20px;
@@ -142,7 +131,7 @@ onMounted(() => {
   text-align: center;
 }
 
-/* Genre selector dropdown */
+
 .genre-selector {
   padding: 10px 15px;
   margin-bottom: 30px;
@@ -154,10 +143,9 @@ onMounted(() => {
 }
 
 .genre-selector:focus {
-  border-color: #FF6F61; /* Highlight border on focus */
+  border-color: #FF6F61; 
 }
 
-/* Movie list container */
 .movie-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -165,7 +153,6 @@ onMounted(() => {
   justify-items: center;
 }
 
-/* Individual movie card styling */
 .movie-card {
   background-color: white;
   border-radius: 10px;
@@ -183,7 +170,6 @@ onMounted(() => {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Movie poster styling */
 .movie-poster {
   width: 100%;
   height: auto;
@@ -192,10 +178,9 @@ onMounted(() => {
 }
 
 .movie-card:hover .movie-poster {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05); 
 }
 
-/* Movie title styling */
 .movie-title {
   margin-top: 10px;
   font-size: 1.1rem;
@@ -208,7 +193,6 @@ onMounted(() => {
   overflow: hidden;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .genre-selector {
     width: 100%;

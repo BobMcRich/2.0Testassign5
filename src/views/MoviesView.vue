@@ -46,29 +46,27 @@ const genresList = [
 </template>
 
 <style scoped>
-/* Full-page container */
 .movie-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin: 0 auto;
   padding: 20px;
-  padding-top: 120px; /* Add padding-top to push content below the fixed header */
-  background: linear-gradient(135deg, #2a2a72, #009ffd); /* Cool gradient background */
-  background-size: cover; /* Ensures the gradient or image covers the entire container */
-  color: white; /* Adjust text color to ensure visibility against the dark background */
-  height: 100vh; /* Make the container take the entire viewport height */
-  overflow-y: auto; /* Enable scrolling if content exceeds the viewport height */
-  position: relative; /* Ensures pseudo-elements align correctly */
+  padding-top: 120px; 
+  background: linear-gradient(135deg, #2a2a72, #009ffd); 
+  background-size: cover; 
+  color: white; 
+  height: 100vh; 
+  overflow-y: auto; 
+  position: relative; 
 }
 
-/* Genre section */
 .genre-list {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 20px;
   border-radius: 10px;
-  height: auto; /* Allow the genre list to expand naturally */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  height: auto; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .genre-list h2 {
@@ -97,13 +95,12 @@ const genresList = [
   background-color: #ccc;
 }
 
-/* Feature section */
 .feature-section {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 20px;
   border-radius: 10px;
-  height: auto; /* Allow the feature section to expand */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  height: auto; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .feature-section h2 {
@@ -112,7 +109,6 @@ const genresList = [
   margin-bottom: 20px;
 }
 
-/* Featured movies card styles (if applicable to your Feature component) */
 .feature-section .movie-card {
   display: inline-block;
   margin-right: 15px;
@@ -137,7 +133,6 @@ const genresList = [
   text-transform: uppercase;
 }
 
-/* Optional: Add styles for the background stars */
 .movie-container::before {
   content: '';
   position: absolute;
@@ -147,7 +142,7 @@ const genresList = [
   height: 100%;
   background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Star background for extra coolness */
   background-size: cover;
-  opacity: 0.1; /* Adjust the opacity to make the stars subtle */
+  opacity: 0.1; 
   pointer-events: none;
 }
 </style>

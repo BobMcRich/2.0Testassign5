@@ -35,7 +35,7 @@ onMounted(async () => {
 
 <style scoped>
 .feature-section {
-  padding: 40px 20px;  /* Adjust padding as needed for space */
+  padding: 40px 20px;  
   width: 100%;
   box-sizing: border-box;
   background: linear-gradient(135deg, #FF6F61, #D83A6A);
@@ -43,7 +43,7 @@ onMounted(async () => {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid will adjust for different screen sizes */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 20px;
   max-width: 1200px;
   width: 100%;
@@ -57,7 +57,7 @@ onMounted(async () => {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transform: scale(1);
   transition: transform 0.3s ease;
-  background-color: #fff; /* Ensure cards have a background for visibility */
+  background-color: #fff; 
 }
 
 .movie-card:hover {
@@ -88,7 +88,7 @@ onMounted(async () => {
 
 @media (max-width: 768px) {
   .movie-title {
-    font-size: 1rem; /* Adjust text size for smaller screens */
+    font-size: 1rem; 
   }
 }
 

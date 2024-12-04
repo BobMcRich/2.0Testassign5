@@ -16,51 +16,51 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-/* Make the hero section sticky at the top */
+
 .hero {
   background: linear-gradient(135deg, #FF6F61, #D83A6A);
   display: flex;
-  justify-content: space-between; /* Spread title and buttons apart */
+  justify-content: space-between; 
   align-items: center;
-  height: 120px; /* Smaller height for the banner effect */
-  position: sticky; /* Makes the hero section sticky */
-  top: 0; /* Stick to the top */
+  height: 120px; 
+  position: sticky; 
+  top: 0; 
   left: 0;
   right: 0;
-  z-index: 10; /* Ensures the hero section stays on top */
+  z-index: 10; 
   color: white;
-  padding: 0 20px; /* Reduced padding for a more compact look */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
-  will-change: opacity; /* Performance optimization */
+  padding: 0 20px; 
+  transition: opacity 0.3s ease-in-out; 
+  will-change: opacity; 
 }
 
-/* Class to hide the hero section */
+
 .hero.hidden {
-  opacity: 0; /* Fade out when we scroll past the hero */
+  opacity: 0; 
 }
 
-/* The content inside the hero */
+
 .hero-content {
   display: flex;
-  justify-content: space-between; /* Spread the title and button group */
+  justify-content: space-between; 
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Controls the maximum width of the content */
+  max-width: 1200px; 
 }
 
 .hero h1 {
-  font-size: 1.8rem; /* Slightly smaller font size for the smaller header */
+  font-size: 1.8rem; 
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0; /* Removes extra margin for tighter spacing */
+  margin: 0; 
 }
 
 .button-group {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Push the button group to the right */
+  margin-left: auto; 
 }
 
 .language-btn, .button {
@@ -74,7 +74,7 @@ import { RouterLink } from 'vue-router';
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  margin-left: 10px; /* Add spacing between the buttons */
+  margin-left: 10px; 
   justify-content: r;
 }
 
@@ -116,13 +116,13 @@ import { RouterLink } from 'vue-router';
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://www.transparenttextures.com/patterns/star-animated.gif'); /* Animated stars */
+  background-image: url('https://www.transparenttextures.com/patterns/star-animated.gif'); 
   background-size: cover;
   opacity: 0.2;
   pointer-events: none;
 }
 
-/* Use media query to hide hero section when scrolled down */
+
 @media (max-width: 1024px) {
   .hero {
     opacity: 1;

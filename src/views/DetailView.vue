@@ -12,7 +12,6 @@ console.log(response.data);
 <template>
   <Header />
   <div class="movie-detail">
-    <!-- Movie Title and Poster Section -->
     <div class="movie-header">
       <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster" class="movie-poster" />
       <div class="movie-info">
@@ -22,13 +21,11 @@ console.log(response.data);
       </div>
     </div>
 
-    <!-- Movie Overview Section -->
     <div class="movie-overview-section">
       <h2>Overview</h2>
       <p class="movie-overview">{{ response.data.overview }}</p>
     </div>
 
-    <!-- Trailers Section -->
     <div class="trailers-section">
       <h2 class="trailers-title">Trailers</h2>
       <div class="trailers-container">
@@ -44,14 +41,12 @@ console.log(response.data);
 </template>
 
 <style scoped>
-/* Main container for the movie details page */
 .movie-detail {
   background-color: #f9f9f9;
   padding: 30px 20px;
   font-family: 'Arial', sans-serif;
 }
 
-/* Movie header with poster and information */
 .movie-header {
   display: flex;
   gap: 20px;
@@ -99,7 +94,6 @@ console.log(response.data);
   background-color: #D83A6A;
 }
 
-/* Movie overview section */
 .movie-overview-section {
   background-color: #fff;
   padding: 20px;
@@ -121,7 +115,6 @@ console.log(response.data);
   text-align: justify;
 }
 
-/* Trailers section */
 .trailers-section {
   background-color: #fff;
   padding: 20px;
@@ -143,7 +136,6 @@ console.log(response.data);
   justify-items: center;
 }
 
-/* Individual trailer thumbnail styling */
 .trailer-tile {
   position: relative;
   overflow: hidden;
@@ -158,7 +150,6 @@ console.log(response.data);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Trailer thumbnail image styling */
 .trailer-thumbnail {
   width: 100%;
   height: auto;
@@ -170,7 +161,6 @@ console.log(response.data);
   transform: scale(1.1);
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .movie-header {
     flex-direction: column;

@@ -37,9 +37,8 @@ const handleLogin = () => {
 </template>
 
 <style scoped>
-/* Full-screen hero section */
 .hero {
-  background: linear-gradient(135deg, #FF6F61, #D83A6A); /* Gradient background */
+  background: linear-gradient(135deg, #FF6F61, #D83A6A); 
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -49,9 +48,8 @@ const handleLogin = () => {
   position: relative;
 }
 
-/* Overlay to dim the background */
 .overlay {
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+  background: rgba(0, 0, 0, 0.5); 
   width: 100%;
   height: 100%;
   display: flex;
@@ -62,7 +60,6 @@ const handleLogin = () => {
   border-radius: 10px;
 }
 
-/* Navbar style */
 .navbar {
   position: absolute;
   top: 20px;
@@ -94,12 +91,10 @@ const handleLogin = () => {
   color: white;
 }
 
-/* Register button specific styling */
 .register {
   font-size: 1.1rem;
 }
 
-/* Form container styles */
 .form-container {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 30px 40px;
@@ -114,7 +109,6 @@ const handleLogin = () => {
   color: #333;
 }
 
-/* Input field styles */
 .input-field {
   width: 100%;
   padding: 12px;
@@ -130,7 +124,6 @@ const handleLogin = () => {
   border-color: #FF6F61;
 }
 
-/* Submit button */
 .login {
   width: 100%;
   padding: 12px;

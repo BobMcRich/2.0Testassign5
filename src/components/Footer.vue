@@ -9,7 +9,6 @@
 </template>
 
 <style scoped>
-/* Footer container styles */
 .footer {
   background-color: #222;
   color: #fff;
@@ -19,7 +18,6 @@
   width: 100%;
 }
 
-/* Footer text styles */
 .footer-text {
   font-size: 1.2rem;
   font-weight: 400;
