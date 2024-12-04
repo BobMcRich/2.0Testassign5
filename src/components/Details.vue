@@ -136,7 +136,6 @@ console.log(response.data);
   justify-items: center;
 }
 
-
 .trailer-tile {
   position: relative;
   overflow: hidden;
@@ -151,7 +150,6 @@ console.log(response.data);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 .trailer-thumbnail {
   width: 100%;
   height: auto;
@@ -162,7 +160,6 @@ console.log(response.data);
 .trailer-tile:hover .trailer-thumbnail {
   transform: scale(1.1);
 }
-
 
 @media (max-width: 768px) {
   .movie-header {

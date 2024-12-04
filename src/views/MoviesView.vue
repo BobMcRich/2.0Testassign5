@@ -34,7 +34,6 @@ const genresList = [
   <Hero />
   <div class="movie-container">
     <div class="feature-section">
-      <h2>Featured Movies</h2>
       <Feature />
     </div>
     <div class="genre-list">

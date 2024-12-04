@@ -5,9 +5,7 @@ import { useRouter } from "vue-router";
 
 const props = defineProps(["genres"]);
 const router = useRouter();
-
 const selectedGenre = ref(28);
-
 const response = ref(null);
 
 async function getMovieByGenre() {
