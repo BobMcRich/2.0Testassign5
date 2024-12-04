@@ -30,7 +30,6 @@ onMounted(() => {
 
 <template>
   <div class="movie-gallery">
-    <!-- Optionally you can keep the genre selector or remove it if not needed -->
     <select v-model="selectedGenre" @change="getMovieByGenre" class="genre-selector">
       <option v-for="genre of genres" :key="genre.id" :value="genre.id">{{ genre.genreName }}</option>
     </select>

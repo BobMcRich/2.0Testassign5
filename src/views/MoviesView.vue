@@ -3,6 +3,7 @@ import Genres from "../components/Genres.vue";
 import Feature from "../components/Feature.vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import Hero from "../components/Hero.vue";
 
 const genresList = [
   {
@@ -30,6 +31,7 @@ const genresList = [
 
 <template>
   <Header />
+  <Hero />
   <div class="movie-container">
     <div class="feature-section">
       <h2>Featured Movies</h2>
