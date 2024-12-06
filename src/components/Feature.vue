@@ -2,14 +2,18 @@
 import axios from "axios";
 import { ref, onMounted } from 'vue';
 
+
 const response = ref(null);
 const numbers = ref([]);
+
 
 numbers.value = (() => {
   const set = new Set();
 
+
   while (true) {
     set.add(Math.floor(Math.random() * 19));
+
 
     if (set.size === 3) {
       return set;
@@ -17,10 +21,12 @@ numbers.value = (() => {
   }
 })();
 
+
 onMounted(async () => {
   response.value = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}`);
 })
 </script>
+
 
 <template>
   <div class="feature-section">
@@ -33,6 +39,7 @@ onMounted(async () => {
   </div>
 </template>
 
+
 <style scoped>
 .feature-section {
   padding: 40px 20px;  
@@ -41,14 +48,16 @@ onMounted(async () => {
   background: linear-gradient(135deg, #FF6F61, #D83A6A);
 }
 
+
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
+
 
 .movie-card {
   position: relative;
@@ -57,18 +66,21 @@ onMounted(async () => {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transform: scale(1);
   transition: transform 0.3s ease;
-  background-color: #fff; 
+  background-color: #fff;
 }
+
 
 .movie-card:hover {
   transform: scale(1.05);
 }
+
 
 .movie-poster {
   width: 100%;
   height: auto;
   border-radius: 15px;
 }
+
 
 .movie-title {
   position: absolute;
@@ -86,11 +98,13 @@ onMounted(async () => {
   border-radius: 0 0 15px 15px;
 }
 
+
 @media (max-width: 768px) {
   .movie-title {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 }
+
 
 .hero::before {
   content: '';
